@@ -2,12 +2,12 @@ pipeline  {
     agent any
     environment {
         // Jenkins home dir
-        HOME_ROOT="/opt2/tmp/jenkins"
+        HOME_ROOT="/home/lane/work/for-jenkins"
 
         // About module
-        functionName="entry_count"
-        functionNameU="entry_count"
-        functionNameJ="DBエントリ数集計機能"
+        functionName="CUR-JENKINS"
+        functionNameU="CUR-JENKINS"
+        functionNameJ="CURのJENKINS"
         TEST_HOST="DB_BK"
     }
     stages {
@@ -40,7 +40,7 @@ pipeline  {
                 archiveArtifacts "jenkins/${functionNameJ}/stepcount.xls"
 
                 //事前Checksum
-                sh "find src/${functionNameJ} -type f | xargs cksum > jenkins/${functionNameJ}/checksum_before.log"
+                sh "echo zhanglin"
                 archiveArtifacts "jenkins/${functionNameJ}/checksum_before.log"
             }
         }
