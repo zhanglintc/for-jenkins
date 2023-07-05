@@ -15,6 +15,7 @@ pipeline  {
         stage("Setup") {
             steps {
                 //各種スクリプトの保存
+                sh "echo Setup"
                 archiveArtifacts "Jenkinsfile"
             }
         }
