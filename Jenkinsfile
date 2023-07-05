@@ -15,7 +15,7 @@ pipeline  {
         stage("Setup") {
             steps {
                 //各種スクリプトの保存
-                archiveArtifacts "jenkins/${functionNameJ}/Jenkinsfile"
+                archiveArtifacts "Jenkinsfile"
             }
         }
         // Code inspection
