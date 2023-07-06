@@ -92,10 +92,12 @@ pipeline  {
             // sendMail(currentBuild.currentResult)
         }
         success { // 成功した場合
-            build(
-                job: "【新CUR】ansibleアーカイブ",
-                wait: false
-            )
+            // build(
+            //     job: "【新CUR】ansibleアーカイブ",
+            //     wait: false
+            // )
+
+            sh "echo DONE"
         }
     }
 }
