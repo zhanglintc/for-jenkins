@@ -79,6 +79,7 @@ pipeline  {
     post {
         //常に実施
         always {
+            sh "date"
             // //事後Checksum
             // sh "find src/${functionNameJ} -type f | xargs cksum > jenkins/${functionNameJ}/checksum_after.log"
             // archiveArtifacts "jenkins/${functionNameJ}/checksum_after.log"
