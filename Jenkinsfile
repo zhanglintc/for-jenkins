@@ -60,7 +60,7 @@ pipeline  {
         // Deploy
         stage("Deploy") {
             when {
-                expression { params.BUILD_Deploy }
+                expression { params.DEPLOY }
             }
             steps{
                 sh "echo \"Deploying...\""
@@ -86,7 +86,7 @@ pipeline  {
             // archiveArtifacts "jenkins/${functionNameJ}/checksum_diff.log"
 
             //メール送信
-            sendMail(currentBuild.currentResult)
+            // sendMail(currentBuild.currentResult)
         }
         success { // 成功した場合
             build(
