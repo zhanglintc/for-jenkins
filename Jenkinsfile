@@ -79,11 +79,11 @@ pipeline  {
     post {
         //常に実施
         always {
-            //事後Checksum
-            sh "find src/${functionNameJ} -type f | xargs cksum > jenkins/${functionNameJ}/checksum_after.log"
-            archiveArtifacts "jenkins/${functionNameJ}/checksum_after.log"
-            sh "diff jenkins/${functionNameJ}/checksum_before.log jenkins/${functionNameJ}/checksum_after.log > jenkins/${functionNameJ}/checksum_diff.log  || true"
-            archiveArtifacts "jenkins/${functionNameJ}/checksum_diff.log"
+            // //事後Checksum
+            // sh "find src/${functionNameJ} -type f | xargs cksum > jenkins/${functionNameJ}/checksum_after.log"
+            // archiveArtifacts "jenkins/${functionNameJ}/checksum_after.log"
+            // sh "diff jenkins/${functionNameJ}/checksum_before.log jenkins/${functionNameJ}/checksum_after.log > jenkins/${functionNameJ}/checksum_diff.log  || true"
+            // archiveArtifacts "jenkins/${functionNameJ}/checksum_diff.log"
 
             //メール送信
             sendMail(currentBuild.currentResult)
