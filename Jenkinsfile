@@ -65,14 +65,16 @@ pipeline  {
             steps{
                 sh "echo \"Deploying...\""
 
-                // Deploy
-                sh "rm -rf ansible/roles/deploy${functionNameU}/files"
-                sh "mkdir -p ansible/roles/deploy${functionNameU}/files"
-                sh "cp -pr src/${functionNameJ}/${functionName} ansible/roles/deploy${functionNameU}/files/"
-                sh "ansible-playbook -v ansible/deploy${functionNameU}.yml -i ansible/staging_VM2 -l ${TEST_HOST}"
+                sh "mkdir -p /home/lane/CUR-jenkins"
 
-                // ansibleツリーへの配信(商用配信のため)
-                sh "cp -prf ansible/* /ansible/"
+                // // Deploy
+                // sh "rm -rf ansible/roles/deploy${functionNameU}/files"
+                // sh "mkdir -p ansible/roles/deploy${functionNameU}/files"
+                // sh "cp -pr src/${functionNameJ}/${functionName} ansible/roles/deploy${functionNameU}/files/"
+                // sh "ansible-playbook -v ansible/deploy${functionNameU}.yml -i ansible/staging_VM2 -l ${TEST_HOST}"
+
+                // // ansibleツリーへの配信(商用配信のため)
+                // sh "cp -prf ansible/* /ansible/"
             }
         }
     }
